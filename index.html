@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"> <!-- Animate.css by daneden: for silky-smooth animations in pretty mode! Oh, yeah! -->
+        <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Dancing+Script|Gloria+Hallelujah" rel="stylesheet"> <!-- Google Font API! -->
+        <link rel="stylesheet" href="style.css"> <!-- For the... wait, we can't add a css file in this?! Oh well, suppose I'll use the <style></style> tags... -->
+        <title>TextStat</title>
+        <!-- Icky <style></style> tags -->
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="#" class="brand">TextStat</a>
+                <ul class="nav-links">
+                   <!-- No navigation -->
+                </ul>
+                <a id="uglyBtn" class="btn-nav uglyBtn" onclick="uglify()">Uglify!</a>
+            </nav>
+        </header>
+        
+        <!-- Obligatory Welcome text. -->
+        <section class="intro animated" id="intro">
+           <h1>TextStat</h1>
+           <hr>
+           <p>Welcome to TextStat! This is a test project that analyzes raw text and calculates various statistics. To begin, simply type or paste a block of text into the box below and hit the calculate button to show the metrics!</p>
+        </section>
+        
+        <!-- The good stuff! -->
+        <section class="form center" id="form">
+            <textarea id="inputText" class="inputText" type="textarea" rows="10" cols="200" placeholder="Enter or paste text here" onfocus="removeIntroSection()"></textarea>
+            <button type="button" onclick="calculate()" class="btn" id="calcBtn">Calculate!</button>
+            <div class="hidden" id="output">
+                <h3>TextStat Analysis</h3>
+                <hr>
+                <p class="wordCount">Words: 0</p>
+                <p class="sentenceCount">Sentences: 0</p>
+                <p class="spaceCount">Spaces: 0</p>
+                <p class="avgWords">Average Words per Sentence: 0</p>
+            </div>
+        </section>
+
+        <!-- The results don't always matter, but when they do, they should probably be displayed. -->
+        <section class="output">
+            <!-- Different styles of representation. First, Pretty Mode! -->
+            <div id="textBlock">
+              <!-- this is an empty placeholder comment, that is doomed as soon as the Calculate! button is pressed! -->
+            </div>
+            <!-- And because a very technical, very semantic view at the requirements says the display must be shown 'This is what the rendered HTML should look like before a user presses the button', I present Ugly Mode. -->
+            <div class="resultBox hidden" id="boringResults">
+              <p class="results wordCount">Words: 0</p>
+              <p class="results sentenceCount">Sentences: 0</p>
+              <p class="results spaceCount">Spaces: 0</p>
+              <p class="results avgWords">Average Words per Sentence: 0</p>
+            </div>
+        </section>
+
+        <!-- Stylized Footer! -->
+        <footer class="footer">Made with &#10084; by Stephan Franz</footer>
+
+        <!-- I suppose I should probably include that there JS file for the actual functionality... -->
+        <script src="script.js"></script>
+    </body>
+</html>
